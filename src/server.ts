@@ -12,7 +12,7 @@ import logger from 'jet-logger'
 import 'express-async-errors'
 
 import BaseRouter from '@src/routes/api'
-import HelloRouter from '@src/nouveau/index'
+// import HelloRouter from '@src/nouveau/index'
 import Paths from '@src/routes/constants/Paths'
 
 import EnvVars from '@src/constants/EnvVars'
@@ -51,7 +51,7 @@ app.use(Paths.Base, BaseRouter)
 //   console.log('req: ', req)
 //   res.send('hello')
 // })
-app.use('/hello', HelloRouter)
+// app.use('/hello', HelloRouter)
 
 // Add error handler
 app.use(
