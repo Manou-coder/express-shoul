@@ -1,8 +1,25 @@
 import { IUser } from '@src/models/User'
 import { getRandomInt } from '@src/util/misc'
 import orm from './MockOrm'
+import { getZmaneiAyom } from '@src/lib/kosher-zmanim'
 
 // **** Functions **** //
+
+/**
+ * Get all zmanim.
+ */
+function getZmanim() {
+  const zmanim = getZmaneiAyom({
+    date: new Date(),
+    locationName: 'Jerusalem',
+    latitude: 31.771959,
+    longitude: 35.217018,
+    timeZoneId: 'Asia/Jerusalem',
+    elevation: 800,
+    complexZmanim: true,
+  })
+  return zmanim
+}
 
 /**
  * Get one user.
@@ -77,6 +94,7 @@ async function delete_(id: number): Promise<void> {
 // **** Export default **** //
 
 export default {
+  getZmanim,
   getOne,
   persists,
   getAll,

@@ -22,7 +22,7 @@
     ],
     // "comma-dangle": ["warn", "always-multiline"],
     "comma-dangle": "off",
-    "no-console": 1,
+    // "no-console": 1,
     "no-extra-boolean-cast": 0,
     // "semi": 1,
     "indent": ["warn", 2],
