@@ -1,7 +1,8 @@
+# Express-shoul
+
 ## About
 
-This project was created with [express-generator-typescript](https://github.com/seanpmaxwell/express-generator-typescript).
-
+This project was created from [express-generator-typescript](https://github.com/seanpmaxwell/express-generator-typescript).
 
 ## Available Scripts
 
@@ -37,7 +38,6 @@ Run the production build (Must be built first).
 
 Run production build with a different env file.
 
-
 ## Additional Notes
 
-- If `npm run dev` gives you issues with bcrypt on MacOS you may need to run: `npm rebuild bcrypt --build-from-source`. 
+- If `npm run dev` gives you issues with bcrypt on MacOS you may need to run: `npm rebuild bcrypt --build-from-source`.
