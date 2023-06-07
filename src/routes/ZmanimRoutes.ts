@@ -24,6 +24,7 @@ function getAll(req: Request, res: Response) {
     elevation: elev,
     complexZmanim: cplxZman,
   } = req.query
+  console.log('req.query: ', req.query)
   if (!req.query || !lat || !long || !tzId) {
     return res
       .status(HttpStatusCodes.BAD_REQUEST)
@@ -33,18 +34,16 @@ function getAll(req: Request, res: Response) {
   const latitude = typeof lat === 'string' ? Number(lat) : null
   const longitude = typeof long === 'string' ? Number(long) : null
   const elevation = typeof elev === 'string' ? Number(elev) : undefined
-  const complexZmanim =
-    typeof cplxZman === 'boolean' ? Boolean(cplxZman) : undefined
+  const complexZmanim = cplxZman === 'false' ? false : Boolean(cplxZman)
   const timeZoneId =
     typeof tzId === 'string' && timeZoneIdList.includes(tzId) ? tzId : ''
   if (latitude === null || longitude === null || elevation === null) {
     return res
       .status(HttpStatusCodes.BAD_REQUEST)
       .json({ error: 'Type errors with query parameters hello' })
-  } else {
-    console.log('coucp')
   }
 
+  console.log('complexZmanim: ', complexZmanim)
   const zmanim = getZmaneiAyom({
     date: dt,
     locationName,
